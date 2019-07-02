@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-char m[] = {"gndk€rlqhmtkwwp}z}"};
+char m[] = "MSW{byly_Cm_sIol_lYqUlx_yhdIs_Cn_Wuymul_il_wuff_bcg_pCwnIl_cm_u_Yrwyffyhn_guh_cz_sio_quhn_ni_ayn_bcm_chzilguncihm_sio_wuh_dich_om";
 
 void caesar(int turn)
 {
@@ -10,6 +10,8 @@ void caesar(int turn)
     for (i = 0; m[i] != '\0'; i++)
     {
         a = m[i];
+        printf("%c", (a + turn-'a') % 26 + 'a');
+        continue;
         if ('a' <= a && a <= 'z')
         {
             printf("%c", (a - 'a' + turn) % 26 + 'a');
@@ -17,6 +19,10 @@ void caesar(int turn)
         else if ('A' <= a && a <= 'Z')
         {
             printf("%c", (a - 'A' + turn) % 26 + 'A');
+        }
+        else if ('0' <= a && a <= '9')
+        {
+            printf("%c", (a + turn));
         }
         else
         {
@@ -29,7 +35,7 @@ void caesar(int turn)
 int main()
 {
     int i;
-    for (i = 1; i < 26; i++)
+    for (i =0; i < 26; i++)
     {
         caesar(i);
     }
